@@ -4,8 +4,13 @@ main = "src/index.ts"
 compatibility_date = "2024-06-20"
 compatibility_flags = ["nodejs_compat"]
 
+
+[[kv_namespaces]]
+binding = "GKEY_KV_NAMESPACE"
+id = "5304e299606a46c4b2bc7c1e2857c57a"
+
 [[d1_databases]]
-binding = "DB"                                       # i.e. available in your Worker on env.DB
+binding = "DB" # i.e. available in your Worker on env.DB
 database_name = "sync-google-sheet"
 database_id = "6c9d54d2-b186-40da-aa48-8cd82ef839dd"
 migrations_dir = "./db/migrations"
