@@ -1,0 +1,40 @@
+{
+  "name": "google-sheet-sync",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --name google-sheet-sync --port 9787 --inspector-port 9329 --persist-to=.db-local",
+    "deploy:staging": "wrangler deploy --env staging",
+    "start": "wrangler dev",
+    "test": "vitest",
+    "cf-typegen": "wrangler types",
+    "migrate": "./migrate.sh",
+    "generate": "graphql-codegen",
+    "migration-list": "wrangler d1 migrations list DB",
+    "migration-apply-production": "wrangler d1 migrations apply DB --remote"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.4.5",
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "typescript": "^5.4.5",
+    "vitest": "1.5.0",
+    "wrangler": "^3.60.3",
+    "@types/lodash": "^4.17.5"
+  },
+  "dependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.7",
+    "@graphql-codegen/typescript-resolvers": "^4.1.0",
+    "@types/luxon": "^3.4.2",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.2",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "graphql-yoga": "^5.3.1",
+    "jose": "^5.5.0",
+    "lodash": "^4.17.21",
+    "luxon": "^3.4.4",
+    "nanoid": "^5.0.7"
+  }
+}
